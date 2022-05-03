@@ -1,3 +1,7 @@
+'''
+Maximum and minimum of an array using minimum number of comparisons
+'''
+
 def minmaxinarray(arr):
     min = arr[0]
     max = arr[0]
