@@ -33,11 +33,21 @@ Constraints:
 1 <= K <= N
 
 '''
-
+import heapq
+#Solution 1 Using Sorting Time Complexity will be O(nlogn)
 def KthMaxMinArray(array, k):
     return sorted(array)[k-1]
 
+
+#Solution 2 Efficient By using maxHeap
+
+def KthMaxMin2(arr, k):
+    heapq.heapify(arr)
+    x = heapq.nsmallest(k, arr)
+    return max(x)
+
 if __name__ == '__main__':
-    array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-    k = 5
-    print(KthMaxMinArray(array, k))
+    array = [7, 10, 4, 20, 15]
+    k = 4
+    ans = KthMaxMin2(array, k)
+    print(ans)
